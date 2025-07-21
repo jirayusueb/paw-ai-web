@@ -1,0 +1,39 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+  "extends": ["ultracite"],
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              // Bun modules
+              ":BUN:",
+              // Node.js modules
+              ":NODE:",
+              // React and React-related libraries
+              ["react", "react-dom", "react-*", "@types/react*"],
+              // Next.js modules
+              ["next", "next/*", "@next/*"],
+              // Modules imported with the `npm:` protocol
+              ["npm:*", "npm:*/**"],
+              // Modules imported with another protocol. e.g. `jsr:`
+              ":PACKAGE_WITH_PROTOCOL:",
+              // URLs
+              ":URL:",
+              // Libraries
+              ":PACKAGE:",
+              // Absolute paths
+              ["/**"],
+              // Sharp aliases
+              ["#*", "#*/**"],
+              // All other paths
+              ":PATH:"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
