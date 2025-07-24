@@ -9,7 +9,7 @@ import FOOTER_JET from "@/assets/media/image/footer-jet.png";
 
 export function HomePageLayout({ children }: PropsWithChildren) {
   return (
-    <div className="relative min-h-screen w-screen bg-black">
+    <div className="relative min-h-screen max-w-screen bg-black">
       <div className="sticky top-0 z-50">
         <Navbar />
       </div>
