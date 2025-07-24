@@ -14,11 +14,6 @@ export function HomePageLayout({ children }: PropsWithChildren) {
         <Navbar />
       </div>
       <Image
-        alt="shade blur"
-        className="-translate-x-1/2 absolute top-0 left-1/2 size-[777px]"
-        src={SHADE_BLUR}
-      />
-      <Image
         alt="hero banner"
         className="-z-10 absolute top-0 left-0 w-full"
         src={BG_HERO}

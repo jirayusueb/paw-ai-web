@@ -11,7 +11,7 @@ import Image from "next/image";
 
 function PricingCard() {
   return (
-    <div className="rounded-2xl p-6 flex flex-col gap-4 border">
+    <div className="rounded-2xl p-6 flex flex-col gap-4 bg-purple-fade border-purple-glow">
       <div className="flex items-center gap-2 justify-between">
         <div className="flex items-center gap-2">
           <Image src={NVIDIA_LOGO} alt="nvidia logo" />
@@ -83,6 +83,15 @@ export function PricingSection() {
         <PricingCard />
         <PricingCard />
         <PricingCard />
+      </div>
+      <div className="w-full mt-20 flex justify-center">
+        <button
+          type="button"
+          className="px-4 py-3 bg-glass border-glass rounded-md flex items-center gap-2 h-10 cursor-pointer text-sm"
+        >
+          See all GPUs
+          <ChevronRight size={20} />
+        </button>
       </div>
     </div>
   );

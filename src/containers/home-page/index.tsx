@@ -7,7 +7,7 @@ import {
   CompatibilitySection,
   CTASection,
   PricingSection,
-} from "@/containers/home-page/components";
+} from "@/containers/home-page/sections";
 
 export function HomePageContainer() {
   return (
