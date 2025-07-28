@@ -18,7 +18,7 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    NEXT_PUBLIC_APP_URL: z.string().url().optional(),
+    NEXT_PUBLIC_APP_URL: z.string().optional(),
     NEXT_PUBLIC_SITE_NAME: z.string().min(1).default("PAW AI"),
     NEXT_PUBLIC_SITE_DESCRIPTION: z.string().min(1).default("PAW AI"),
   },
