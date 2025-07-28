@@ -7,9 +7,32 @@ import {
   REAL_TIME_ICON,
   LAUNCH_CONTROL_ICON,
 } from "@/assets/media/image/icon/use-case";
+import type { StaticImageData } from "next/image";
 
-export function UseCasesSection() {
-  const useCases = [
+// Types
+interface UseCaseItem {
+  title: string;
+  description: string;
+  src: StaticImageData;
+}
+
+interface UseCasesContent {
+  label: string;
+  title: string;
+  description: string;
+  useCases: UseCaseItem[];
+}
+
+interface UseCasesSectionProps {
+  content?: Partial<UseCasesContent>;
+}
+
+// Constants
+const DEFAULT_CONTENT: UseCasesContent = {
+  label: "Use Cases",
+  title: "Compute for AI. Built for You.",
+  description: "Seamless access to powerful, scalable compute.",
+  useCases: [
     {
       title: "AI Model Training",
       description:
@@ -46,26 +69,41 @@ export function UseCasesSection() {
         "Launch and control smarter training with fast setup and flexible customization.",
       src: LAUNCH_CONTROL_ICON,
     },
-  ];
+  ],
+};
+
+export function UseCasesSection({ content }: UseCasesSectionProps) {
+  const c = { ...DEFAULT_CONTENT, ...content };
 
   return (
-    <div className="container mx-auto py-40">
-      <div className="flex flex-col gap-10 text-center">
-        <p>Use Cases</p>
-        <div className="flex flex-col gap-4 text-center">
-          <p className="font-semibold text-5xl">
-            Compute for AI. Built for You.
-          </p>
-          <p className="text-2xl text-muted-foreground">
-            Seamless access to powerful, scalable compute.
+    <section
+      className="container mx-auto py-10 md:py-40 px-4 md:px-0"
+      aria-labelledby="use-cases-title"
+    >
+      <header className="flex flex-col md:gap-10 gap-6 text-center">
+        <p className="text-lg md:text-xl font-medium">{c.label}</p>
+        <div className="flex flex-col gap-2 md:gap-4 text-center">
+          <h2
+            id="use-cases-title"
+            className="font-semibold text-2xl md:text-5xl"
+          >
+            {c.title}
+          </h2>
+          <p className="text-lg md:text-2xl text-muted-foreground">
+            {c.description}
           </p>
         </div>
-      </div>
-      <div className="mt-20 grid grid-cols-3 gap-6">
-        {useCases.map((useCase, index) => (
-          <FeatureCard key={index} {...useCase} />
+      </header>
+
+      <ul className="mt-6 md:mt-20 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 list-none p-0">
+        {c.useCases.map((useCase, index) => (
+          <li key={index}>
+            <article className="h-[200px] md:h-[300px]">
+              <FeatureCard {...useCase} />
+            </article>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 }

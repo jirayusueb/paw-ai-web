@@ -19,11 +19,14 @@ export function HomePageLayout({ children }: PropsWithChildren) {
         src={BG_HERO}
       />
       {children}
-      <div className="w-full h-[410px]">
-        <Image src={FOOTER_JET} alt="footer jet" className="w-full" />
-      </div>
-      <footer className="bg-[#351755]">
-        <div className="container mx-auto flex flex-col justify-between pt-10">
+
+      <footer className="bg-black relative">
+        <Image
+          src={FOOTER_JET}
+          alt="footer jet"
+          className="w-full absolute bottom-0 left-0"
+        />
+        <div className="container mx-auto flex flex-col justify-between py-15">
           <Image src={LOGO} alt="logo" />
           <div className="flex justify-between mt-15">
             <div className="w-1/2 grid grid-cols-3 gap-4">
@@ -75,9 +78,6 @@ export function HomePageLayout({ children }: PropsWithChildren) {
                 © 2025 Paw AI. All rights reserved.
               </p>
             </div>
-          </div>
-          <div className="mt-16">
-            <Image src={FOOTER_TEXT} alt="footer text" />
           </div>
         </div>
       </footer>

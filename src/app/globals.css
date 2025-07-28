@@ -159,3 +159,7 @@
     linear-gradient(0deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.01)),
     radial-gradient(107.5% 107.5% at 50% 215%, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%);
 }
+
+@utility font-display-swap {
+  font-display: swap;
+}
