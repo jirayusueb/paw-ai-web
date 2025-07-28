@@ -1,5 +1,6 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
+import { getAppUrl } from "@/lib/utils";
 
 export const env = createEnv({
   /**
@@ -17,15 +18,7 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    NEXT_PUBLIC_APP_URL: z
-      .string()
-      .url()
-      .optional()
-      .default(
-        typeof window !== "undefined"
-          ? window.location.origin
-          : "http://localhost:3000"
-      ),
+    NEXT_PUBLIC_APP_URL: z.string().url().optional(),
     NEXT_PUBLIC_SITE_NAME: z.string().min(1).default("PAW AI"),
     NEXT_PUBLIC_SITE_DESCRIPTION: z.string().min(1).default("PAW AI"),
   },
@@ -36,7 +29,7 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
-    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || getAppUrl(),
     NEXT_PUBLIC_SITE_NAME: process.env.NEXT_PUBLIC_SITE_NAME,
     NEXT_PUBLIC_SITE_DESCRIPTION: process.env.NEXT_PUBLIC_SITE_DESCRIPTION,
   },

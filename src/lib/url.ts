@@ -10,7 +10,8 @@ export class UrlBuilder {
   private hash: string;
 
   constructor(baseUrl?: string) {
-    this.baseUrl = baseUrl || env.NEXT_PUBLIC_APP_URL;
+    this.baseUrl =
+      baseUrl || env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
     this.path = "";
     this.queryParams = new Map();
     this.hash = "";
@@ -143,7 +144,9 @@ export const urlUtils = {
   isExternal(url: string): boolean {
     try {
       const urlObj = new URL(url);
-      const currentOrigin = new URL(env.NEXT_PUBLIC_APP_URL).origin;
+      const currentOrigin = new URL(
+        env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
+      ).origin;
       return urlObj.origin !== currentOrigin;
     } catch {
       return false;

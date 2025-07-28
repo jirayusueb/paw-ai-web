@@ -8,7 +8,7 @@ export const siteConfig = {
     "Access cutting-edge GPUs and AI compute resources on demand. Train models, process data, and deploy AI applications with lightning-fast performance and enterprise-grade security.",
   shortDescription:
     "Access cutting-edge GPUs and AI compute resources on demand. Train models, process data, and deploy AI applications with lightning-fast performance.",
-  url: env.NEXT_PUBLIC_APP_URL,
+  url: env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   ogImage: "/og.png",
   creator: "@pawai",
   keywords: [
