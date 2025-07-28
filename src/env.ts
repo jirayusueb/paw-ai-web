@@ -21,7 +21,11 @@ export const env = createEnv({
       .string()
       .url()
       .optional()
-      .default(window.location.origin),
+      .default(
+        typeof window !== "undefined"
+          ? window.location.origin
+          : "http://localhost:3000"
+      ),
     NEXT_PUBLIC_SITE_NAME: z.string().min(1).default("PAW AI"),
     NEXT_PUBLIC_SITE_DESCRIPTION: z.string().min(1).default("PAW AI"),
   },
