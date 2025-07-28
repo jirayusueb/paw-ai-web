@@ -3,8 +3,8 @@ import {
   useEventListener,
   useLayoutMount,
   useSafeState,
-} from '@shined/react-use';
-import { useEffect, useRef } from 'react';
+} from "@shined/react-use";
+import { useEffect, useRef } from "react";
 
 export const BREAKPOINTS = {
   sm: 640,
@@ -17,19 +17,21 @@ export const BREAKPOINTS = {
 type Breakpoints = keyof typeof BREAKPOINTS;
 
 const currentBreakpoint = () => {
+  if (typeof window === "undefined") return "sm";
+
   const width = window.innerWidth;
 
   switch (true) {
     case width < BREAKPOINTS.sm:
-      return 'sm';
+      return "sm";
     case width < BREAKPOINTS.md:
-      return 'md';
+      return "md";
     case width < BREAKPOINTS.lg:
-      return 'lg';
+      return "lg";
     case width < BREAKPOINTS.xl:
-      return 'xl';
+      return "xl";
     default:
-      return 'xxl';
+      return "xxl";
   }
 };
 
@@ -108,20 +110,20 @@ const createBreakpointInfo = (currentBp: Breakpoints): BreakpointInfo => {
       const bpIndex = breakpointKeys.indexOf(bp);
       return currentIndex <= bpIndex;
     },
-    width: typeof window !== 'undefined' ? window.innerWidth : 0,
-    height: typeof window !== 'undefined' ? window.innerHeight : 0,
-    isMobile: currentBp === 'sm',
-    isTablet: currentBp === 'md',
-    isDesktop: currentBp === 'lg',
-    isDesktopLg: currentBp === 'xl',
-    isDesktopXl: currentBp === 'xxl',
+    width: typeof window !== "undefined" ? window.innerWidth : 0,
+    height: typeof window !== "undefined" ? window.innerHeight : 0,
+    isMobile: currentBp === "sm",
+    isTablet: currentBp === "md",
+    isDesktop: currentBp === "lg",
+    isDesktopLg: currentBp === "xl",
+    isDesktopXl: currentBp === "xxl",
   };
 };
 
 const getInitialBreakpoint = (): Breakpoints => {
-  if (typeof window === 'undefined') {
+  if (typeof window === "undefined") {
     // Default to 'sm' or whatever makes sense for your app
-    return 'sm';
+    return "sm";
   }
   return currentBreakpoint();
 };
@@ -140,7 +142,7 @@ export function useBreakpoints(options?: UseBreakpointsOptions) {
 
   useLayoutMount(updateState);
 
-  useEventListener(() => window, 'resize', updateState);
+  useEventListener(() => window, "resize", updateState);
 
   // Call onChange when breakpoint changes
   useEffect(() => {
@@ -153,11 +155,11 @@ export function useBreakpoints(options?: UseBreakpointsOptions) {
 
   return {
     breakpoint,
-    isMobile: breakpoint === 'sm',
-    isTablet: breakpoint === 'md',
-    isDesktop: breakpoint === 'lg',
-    isDesktopLg: breakpoint === 'xl',
-    isDesktopXl: breakpoint === 'xxl',
+    isMobile: breakpoint === "sm",
+    isTablet: breakpoint === "md",
+    isDesktop: breakpoint === "lg",
+    isDesktopLg: breakpoint === "xl",
+    isDesktopXl: breakpoint === "xxl",
     ...baseBreakpoints,
   };
 }

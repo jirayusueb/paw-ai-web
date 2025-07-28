@@ -16,6 +16,9 @@ export function useBreakpoint() {
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === "undefined") return;
+
     // Set initial values
     const updateDimensions = () => {
       const newWidth = window.innerWidth;
@@ -189,6 +192,9 @@ export function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(false);
 
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === "undefined") return;
+
     const mediaQuery = window.matchMedia(query);
     setMatches(mediaQuery.matches);
 
