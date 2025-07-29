@@ -63,7 +63,7 @@ export function HeroSection({ content, onGetStarted }: HeroSectionProps) {
           />
         </div>
         <div
-          className="absolute top-[80px] left-1/2 rounded-full -translate-x-1/2 w-full h-[500px] pointer-events-none z-0"
+          className="absolute top-[80px] left-1/2 rounded-full -translate-x-1/2 w-full h-[600px] pointer-events-none z-0"
           style={{
             background: "rgba(96, 42, 154, 0.24)",
             filter: "blur(400px)",
