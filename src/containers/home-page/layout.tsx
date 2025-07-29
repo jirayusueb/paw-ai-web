@@ -38,7 +38,6 @@ export function HomePageLayout({ children }: PropsWithChildren) {
         src={BG_HERO}
       />
       {children}
-
       <Footer />
     </div>
   );
