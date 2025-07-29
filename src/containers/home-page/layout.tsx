@@ -5,6 +5,7 @@ import SHADE_BLUR from "@/assets/media/image/shade-blur.png";
 import { Navbar } from "@/containers/home-page/components/navbar";
 import { Footer } from "@/containers/home-page/components/footer";
 import { promoterIcons } from "@/assets/media/svg/home-promotor";
+import { BgStarSpace, homePageIcons } from "@/assets/media/svg/home-page";
 
 export function HomePageLayout({ children }: PropsWithChildren) {
   return (
@@ -34,8 +35,26 @@ export function HomePageLayout({ children }: PropsWithChildren) {
       />
       <Image
         alt="hero banner"
-        className="-z-10 absolute top-0 left-0 w-full"
+        className="-z-20 absolute top-0 left-0 w-full"
         src={BG_HERO}
+      />
+      <Image
+        src={BgStarSpace}
+        alt="bg star space"
+        className="w-full h-full absolute top-0 left-1/2 -translate-x-1/2"
+        aria-hidden="true"
+      />
+      <Image
+        src={homePageIcons.iconStar1}
+        alt="icon star 1"
+        className="absolute w-auto h-[400px] top-[1200px] left-1/2 -translate-x-[200%] z-30"
+        aria-hidden="true"
+      />
+      <Image
+        src={homePageIcons.iconStar2}
+        alt="icon star 1"
+        className="absolute w-auto h-[400px] top-[2400px] right-1/2 translate-x-[150%]"
+        aria-hidden="true"
       />
       {children}
       <Footer />

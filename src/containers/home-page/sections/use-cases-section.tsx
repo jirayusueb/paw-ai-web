@@ -85,7 +85,7 @@ export function UseCasesSection({ content }: UseCasesSectionProps) {
         <div className="flex flex-col gap-2 md:gap-4 text-center">
           <h2
             id="use-cases-title"
-            className="font-semibold text-2xl md:text-5xl"
+            className="font-semibold text-2xl md:text-5xl z-10"
           >
             {c.title}
           </h2>

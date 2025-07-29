@@ -91,7 +91,7 @@ function SocialMediaSection({ links }: { links: typeof SOCIAL_MEDIA_LINKS }) {
 // Main Footer Component
 export function Footer() {
   return (
-    <footer className="bg-black relative">
+    <footer className="bg-black relative z-10">
       <Image
         src={FOOTER_JET}
         alt="footer jet"

@@ -1,8 +1,8 @@
-import Image from "next/image";
 import HERO_BANNER from "@/assets/media/image/hero-website.png";
 import SHADE_BLACK from "@/assets/media/image/shade-black.png";
-import HOME_ELLIPS from "@/assets/media/image/home-ellips.png";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { BgStarSpace } from "@/assets/media/svg/home-page";
 
 // Types
 interface HeroContent {
@@ -30,7 +30,7 @@ export function HeroSection({ content, onGetStarted }: HeroSectionProps) {
 
   return (
     <section className="relative" aria-labelledby="hero-title">
-      <div className="container mx-auto mt-[24px] md:mt-[200px] px-4 sm:px-0 ">
+      <div className="container mx-auto mt-[24px] md:mt-[200px] px-4 sm:px-0 relative z-10">
         <header className="flex flex-col items-center gap-2 md:gap-4 text-center md:text-left">
           <h1 className="font-semibold text-3xl md:text-5xl leading-none">
             {c.title}
@@ -69,13 +69,13 @@ export function HeroSection({ content, onGetStarted }: HeroSectionProps) {
             filter: "blur(400px)",
           }}
         />
-        <Image
-          alt="shade black"
-          className="absolute bottom-0 left-0 h-[90px] md:h-[360px] w-full pointer-events-none z-20"
-          src={SHADE_BLACK}
-          aria-hidden="true"
-        />
       </div>
+      <Image
+        alt="shade black"
+        className="absolute bottom-0 left-0 h-[90px] md:h-[360px] w-full pointer-events-none z-20"
+        src={SHADE_BLACK}
+        aria-hidden="true"
+      />
     </section>
   );
 }
