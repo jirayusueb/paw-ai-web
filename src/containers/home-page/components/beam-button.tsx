@@ -68,7 +68,7 @@ export function BeamButton({
   duration = 6,
   delay = 0,
   colorFrom = "#FFFFFF",
-  colorTo = "#FFFFFF",
+  colorTo = "#e5e5e5",
   reverse = false,
   initialOffset = 0,
   borderWidth = 2,
