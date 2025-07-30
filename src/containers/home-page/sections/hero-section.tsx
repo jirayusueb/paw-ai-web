@@ -1,6 +1,7 @@
 import HERO_BANNER from "@/assets/media/image/hero-website.png";
 import SHADE_BLACK from "@/assets/media/image/shade-black.png";
 import { IconAsset } from "@/assets/media/svg/icon";
+import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import { BeamButton } from "@/containers/home-page/components/beam-button";
 import Image from "next/image";
 
@@ -44,10 +45,10 @@ export function HeroSection({ content, onGetStarted }: HeroSectionProps) {
         </header>
 
         <div className="mt-6 md:mt-10 flex items-center justify-center">
-          <BeamButton onClick={onGetStarted} size="lg">
+          <ShimmerButton onClick={onGetStarted}>
             {c.ctaText}
             <Image src={IconAsset.rocket} alt="rocket" />
-          </BeamButton>
+          </ShimmerButton>
         </div>
 
         <div className="mt-11 md:mt-20 flex items-center justify-center">

@@ -4,6 +4,7 @@ import Image from "next/image";
 import HOME_PAW_AI_LOGO from "@/assets/media/image/home-paw-ai-logo.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { BorderBeam } from "@/components/magicui/border-beam";
 import type { StaticImageData } from "next/image";
 
 // Types
@@ -44,8 +45,18 @@ export function CTASection({ content, onSubmit }: CTASectionProps) {
       className="container mx-auto flex flex-col items-center py-10 md:py-40 px-4 md:px-0"
       aria-labelledby="cta-title"
     >
-      <div className="border border-[#602A9A80] rounded-2xl py-15 px-4 md:py-30 bg-purple-haze w-full">
-        <header className="flex flex-col items-center gap-8 md:gap-10 text-center">
+      <div className="relative border border-[#602A9A]/20 rounded-2xl py-15 px-4 md:py-30 bg-purple-haze w-full overflow-hidden">
+        {/* Border Beam Animation */}
+        <BorderBeam
+          size={500}
+          duration={8}
+          colorFrom="#fff"
+          colorTo="#e5e5e5"
+          borderWidth={2}
+          className="opacity-60"
+        />
+
+        <header className="flex flex-col items-center gap-8 md:gap-10 text-center relative z-10">
           <Image alt="Paw AI logo" src={c.logo} className="w-auto  h-20" />
           <div className="flex flex-col gap-4 text-center">
             <h2 id="cta-title" className="font-semibold text-3xl md:text-5xl">
@@ -59,7 +70,7 @@ export function CTASection({ content, onSubmit }: CTASectionProps) {
 
         <form
           onSubmit={handleSubmit}
-          className="gap-2 mt-12 md:mt-16 flex items-center justify-center sm:flex-row w-full"
+          className="gap-2 mt-12 md:mt-16 flex items-center justify-center sm:flex-row w-full relative z-10"
         >
           <div className="relative w-[300px]">
             <input
