@@ -7,6 +7,7 @@ import { Menu } from "lucide-react";
 import { useBreakpoint } from "@/hooks/use-breakpoint";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { showMobileNavSheet } from "./mobile-nav-sheet";
+import { BeamButton } from "@/containers/home-page/components/beam-button";
 
 export function Navbar() {
   const { isMobile } = useBreakpoint();
@@ -108,19 +109,22 @@ export function Navbar() {
           {/* Right: Auth Items (Desktop) / Menu (Mobile) */}
           {!isMobile ? (
             <ul className="flex items-center gap-4" role="menubar">
-              {authItems.map((item) => (
-                <li key={item.label} role="none">
-                  <Button
-                    variant={item.variant}
-                    className="w-[120px] text-center"
-                    role="menuitem"
-                    aria-label={item.ariaLabel}
-                    asChild
-                  >
-                    <a href={item.href}>{item.label}</a>
-                  </Button>
-                </li>
-              ))}
+              <li role="none">
+                <Button
+                  variant="link"
+                  className="w-[120px] text-center"
+                  role="menuitem"
+                  aria-label="Sign in to your account"
+                  asChild
+                >
+                  <a href="#login">Login</a>
+                </Button>
+              </li>
+              <li role="none">
+                <BeamButton className="w-[120px] text-center">
+                  <a href="#signup">Sign up</a>
+                </BeamButton>
+              </li>
             </ul>
           ) : (
             <div className="flex items-center">

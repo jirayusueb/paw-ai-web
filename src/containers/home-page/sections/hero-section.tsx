@@ -1,8 +1,8 @@
 import HERO_BANNER from "@/assets/media/image/hero-website.png";
 import SHADE_BLACK from "@/assets/media/image/shade-black.png";
-import { Button } from "@/components/ui/button";
+import { IconAsset } from "@/assets/media/svg/icon";
+import { BeamButton } from "@/containers/home-page/components/beam-button";
 import Image from "next/image";
-import { BgStarSpace } from "@/assets/media/svg/home-page";
 
 // Types
 interface HeroContent {
@@ -44,14 +44,10 @@ export function HeroSection({ content, onGetStarted }: HeroSectionProps) {
         </header>
 
         <div className="mt-6 md:mt-10 flex items-center justify-center">
-          <Button
-            variant="outline"
-            onClick={onGetStarted}
-            size="lg"
-            className="text-base px-8 py-3"
-          >
+          <BeamButton onClick={onGetStarted} size="lg">
             {c.ctaText}
-          </Button>
+            <Image src={IconAsset.rocket} alt="rocket" />
+          </BeamButton>
         </div>
 
         <div className="mt-11 md:mt-20 flex items-center justify-center">
