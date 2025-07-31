@@ -15,22 +15,22 @@ export function HomePageLayout({ children }: PropsWithChildren) {
       </div>
       <Image
         alt="hero banner"
-        className="absolute hidden xl:block top-[140px] left-1/2 -translate-x-[300%] h-[92px]"
+        className="absolute hidden xl:block top-[140px] left-1/2 -translate-x-[300%] h-[92px] z-10"
         src={promoterIcons.promoter4}
       />
       <Image
         alt="hero banner"
-        className="absolute hidden xl:block top-[272px] left-1/2 -translate-x-[350%] h-[92px]"
+        className="absolute hidden xl:block top-[272px] left-1/2 -translate-x-[350%] h-[92px] z-10"
         src={promoterIcons.promoter2}
       />
       <Image
         alt="hero banner"
-        className="absolute hidden xl:block top-[140px] right-1/2 translate-x-[300%] h-[92px]"
+        className="absolute hidden xl:block top-[140px] right-1/2 translate-x-[300%] h-[92px] z-10"
         src={promoterIcons.promoter1}
       />
       <Image
         alt="hero banner"
-        className="absolute hidden xl:block top-[272px] right-1/2 translate-x-[350%] h-[92px]"
+        className="absolute hidden xl:block top-[272px] right-1/2 translate-x-[350%] h-[92px] z-10"
         src={promoterIcons.promoter3}
       />
       <Image

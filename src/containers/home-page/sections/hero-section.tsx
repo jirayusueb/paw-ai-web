@@ -30,7 +30,23 @@ export function HeroSection({ content, onGetStarted }: HeroSectionProps) {
   const c = { ...DEFAULT_CONTENT, ...content };
 
   return (
-    <section className="relative" aria-labelledby="hero-title">
+    <section className="relative overflow-hidden" aria-labelledby="hero-title">
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        >
+          <source src="bg-space.mp4" type="video/mp4" />
+        </video>
+        {/* Video overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+      </div>
+
       <div className="container mx-auto mt-[24px] md:mt-[200px] px-4 sm:px-0 relative z-10">
         <header className="flex flex-col items-center gap-2 md:gap-4 text-center md:text-left">
           <h1 className="font-semibold text-3xl md:text-5xl leading-none">
