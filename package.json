@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack & npx next-video sync -w",
     "build": "next build --turbopack",
     "typecheck": "tsc --noEmit",
     "start": "next start",
@@ -55,6 +55,7 @@
     "motion": "^12.23.12",
     "next": "15.4.2",
     "next-themes": "^0.4.6",
+    "next-video": "^2.2.1",
     "react": "19.1.0",
     "react-day-picker": "^9.8.1",
     "react-dom": "19.1.0",
