@@ -45,7 +45,27 @@ export function CTASection({ content, onSubmit }: CTASectionProps) {
       className="container mx-auto flex flex-col items-center py-10 md:py-40 px-4 md:px-0"
       aria-labelledby="cta-title"
     >
-      <div className="relative border border-[#602A9A]/20 rounded-2xl py-15 px-4 md:py-30 bg-purple-haze w-full overflow-hidden">
+      <div className="relative border border-[#602A9A29] rounded-2xl py-15 px-4 md:py-30 bg-purple-haze w-full overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            controls
+            className="w-full h-full object-cover rounded-2xl"
+            aria-hidden="true"
+          >
+            <source src="bg-space-2.mp4" type="video/mp4" />
+          </video>
+          {/* Video overlay for better text readability */}
+          <div
+            className="absolute inset-0 bg-purple-haze opacity-20 rounded-2xl"
+            aria-hidden="true"
+          />
+        </div>
+
         {/* Border Beam Animation */}
         <BorderBeam
           size={500}

@@ -4,7 +4,6 @@ import BG_HERO from "@/assets/media/image/bg-hero.png";
 import SHADE_BLUR from "@/assets/media/image/shade-blur.png";
 import { Navbar } from "@/containers/home-page/components/navbar";
 import { Footer } from "@/containers/home-page/components/footer";
-import { promoterIcons } from "@/assets/media/svg/home-promotor";
 import { BgStarSpace, homePageIcons } from "@/assets/media/svg/home-page";
 
 export function HomePageLayout({ children }: PropsWithChildren) {
@@ -13,26 +12,6 @@ export function HomePageLayout({ children }: PropsWithChildren) {
       <div className="sticky top-0 z-50">
         <Navbar />
       </div>
-      <Image
-        alt="hero banner"
-        className="absolute hidden xl:block top-[140px] left-1/2 -translate-x-[300%] h-[92px] z-10"
-        src={promoterIcons.promoter4}
-      />
-      <Image
-        alt="hero banner"
-        className="absolute hidden xl:block top-[272px] left-1/2 -translate-x-[350%] h-[92px] z-10"
-        src={promoterIcons.promoter2}
-      />
-      <Image
-        alt="hero banner"
-        className="absolute hidden xl:block top-[140px] right-1/2 translate-x-[300%] h-[92px] z-10"
-        src={promoterIcons.promoter1}
-      />
-      <Image
-        alt="hero banner"
-        className="absolute hidden xl:block top-[272px] right-1/2 translate-x-[350%] h-[92px] z-10"
-        src={promoterIcons.promoter3}
-      />
       <Image
         alt="hero banner"
         className="-z-20 absolute top-0 left-0 w-full"

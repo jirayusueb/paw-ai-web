@@ -1,6 +1,7 @@
 import HERO_BANNER from "@/assets/media/image/hero-website.png";
 import SHADE_BLACK from "@/assets/media/image/shade-black.png";
 import { IconAsset } from "@/assets/media/svg/icon";
+import { promoterIcons } from "@/assets/media/svg/home-promotor";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import { BeamButton } from "@/containers/home-page/components/beam-button";
 import Image from "next/image";
@@ -46,6 +47,28 @@ export function HeroSection({ content, onGetStarted }: HeroSectionProps) {
         {/* Video overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
       </div>
+
+      {/* Hero Promoter Images */}
+      <Image
+        alt="hero promoter"
+        className="absolute hidden xl:block top-[140px] left-1/2 -translate-x-[300%] h-[92px] z-10"
+        src={promoterIcons.promoter4}
+      />
+      <Image
+        alt="hero promoter"
+        className="absolute hidden xl:block top-[272px] left-1/2 -translate-x-[350%] h-[92px] z-10"
+        src={promoterIcons.promoter2}
+      />
+      <Image
+        alt="hero promoter"
+        className="absolute hidden xl:block top-[140px] right-1/2 translate-x-[300%] h-[92px] z-10"
+        src={promoterIcons.promoter1}
+      />
+      <Image
+        alt="hero promoter"
+        className="absolute hidden xl:block top-[272px] right-1/2 translate-x-[350%] h-[92px] z-10"
+        src={promoterIcons.promoter3}
+      />
 
       <div className="container mx-auto mt-[24px] md:mt-[200px] px-4 sm:px-0 relative z-10">
         <header className="flex flex-col items-center gap-2 md:gap-4 text-center md:text-left">
