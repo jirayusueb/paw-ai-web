@@ -44,7 +44,7 @@ function VideoBackground({ playerRef }: { playerRef: React.RefObject<any> }) {
     <div className="absolute inset-0 w-full h-full z-0">
       <Player
         ref={playerRef}
-        src="/videos/bg-space-2.mp4"
+        src="/videos/bg-space-2.webm"
         className="w-full h-full object-cover rounded-2xl"
         autoPlay
         loop
