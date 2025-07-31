@@ -53,7 +53,6 @@ export function CTASection({ content, onSubmit }: CTASectionProps) {
             loop
             muted
             playsInline
-            controls
             className="w-full h-full object-cover rounded-2xl"
             aria-hidden="true"
           >
