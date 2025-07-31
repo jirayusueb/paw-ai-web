@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { HomePageLayout } from "@/containers/home-page/layout";
 import {
   HeroSection,
@@ -12,150 +12,84 @@ import {
   PricingSection,
 } from "@/containers/home-page/sections";
 
-// Types
-interface SectionRefs {
-  hero: React.RefObject<HTMLElement | null>;
-  keyBenefits: React.RefObject<HTMLElement | null>;
-  useCases: React.RefObject<HTMLElement | null>;
-  getStarted: React.RefObject<HTMLElement | null>;
-  compatibility: React.RefObject<HTMLElement | null>;
-  pricing: React.RefObject<HTMLElement | null>;
-  cta: React.RefObject<HTMLElement | null>;
-}
-
-interface VisibleSections {
-  hero: boolean;
-  keyBenefits: boolean;
-  useCases: boolean;
-  getStarted: boolean;
-  compatibility: boolean;
-  pricing: boolean;
-  cta: boolean;
-}
+// Animation variants
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export function HomePageContainer() {
-  // Create refs for each section
-  const sectionRefs: SectionRefs = {
-    hero: useRef<HTMLElement>(null),
-    keyBenefits: useRef<HTMLElement>(null),
-    useCases: useRef<HTMLElement>(null),
-    getStarted: useRef<HTMLElement>(null),
-    compatibility: useRef<HTMLElement>(null),
-    pricing: useRef<HTMLElement>(null),
-    cta: useRef<HTMLElement>(null),
-  };
-
-  // Track visible sections
-  const [visibleSections, setVisibleSections] = useState<VisibleSections>({
-    hero: false,
-    keyBenefits: false,
-    useCases: false,
-    getStarted: false,
-    compatibility: false,
-    pricing: false,
-    cta: false,
-  });
-
-  // Intersection observer setup
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -100px 0px",
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const sectionId = entry.target.getAttribute("data-section");
-        if (sectionId && sectionId in visibleSections) {
-          setVisibleSections((prev) => ({
-            ...prev,
-            [sectionId]: entry.isIntersecting,
-          }));
-        }
-      });
-    }, observerOptions);
-
-    // Observe all sections
-    Object.values(sectionRefs).forEach((ref) => {
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-    });
-
-    return () => observer.disconnect();
-  }, [visibleSections]);
-
   return (
     <HomePageLayout>
-      <section
-        ref={sectionRefs.hero}
-        data-section="hero"
-        className={`transition-opacity duration-1000 ${
-          visibleSections.hero ? "opacity-100" : "opacity-0"
-        }`}
+      <motion.section
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <HeroSection />
-      </section>
+      </motion.section>
 
-      <section
-        ref={sectionRefs.keyBenefits}
-        data-section="keyBenefits"
-        className={`transition-opacity duration-1000 delay-200 ${
-          visibleSections.keyBenefits ? "opacity-100" : "opacity-0"
-        }`}
+      <motion.section
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <KeyBenefitsSection />
-      </section>
+      </motion.section>
 
-      <section
-        ref={sectionRefs.useCases}
-        data-section="useCases"
-        className={`transition-opacity duration-1000 delay-300 ${
-          visibleSections.useCases ? "opacity-100" : "opacity-0"
-        }`}
+      <motion.section
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <UseCasesSection />
-      </section>
+      </motion.section>
 
-      <section
-        ref={sectionRefs.getStarted}
-        data-section="getStarted"
-        className={`transition-opacity duration-1000 delay-400 ${
-          visibleSections.getStarted ? "opacity-100" : "opacity-0"
-        }`}
+      <motion.section
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <GetStartedSection />
-      </section>
+      </motion.section>
 
-      <section
-        ref={sectionRefs.compatibility}
-        data-section="compatibility"
-        className={`transition-opacity duration-1000 delay-500 ${
-          visibleSections.compatibility ? "opacity-100" : "opacity-0"
-        }`}
+      <motion.section
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <CompatibilitySection />
-      </section>
+      </motion.section>
 
-      <section
-        ref={sectionRefs.pricing}
-        data-section="pricing"
-        className={`transition-opacity duration-1000 delay-600 ${
-          visibleSections.pricing ? "opacity-100" : "opacity-0"
-        }`}
+      <motion.section
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <PricingSection />
-      </section>
+      </motion.section>
 
-      <section
-        ref={sectionRefs.cta}
-        data-section="cta"
-        className={`transition-opacity duration-1000 delay-700 ${
-          visibleSections.cta ? "opacity-100" : "opacity-0"
-        }`}
+      <motion.section
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <CTASection />
-      </section>
+      </motion.section>
     </HomePageLayout>
   );
 }
