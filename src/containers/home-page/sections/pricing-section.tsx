@@ -117,7 +117,7 @@ export function PricingSection({ content }: PricingSectionProps) {
 
   return (
     <section
-      className="container mx-auto flex flex-col items-center py-10 md:py-40 px-4 md:px-0"
+      className="container mx-auto flex flex-col items-center py-10 md:py-40 px-4 lg:px-0"
       aria-labelledby="pricing-title"
     >
       <header className="flex flex-col items-center gap-6 md:gap-10 text-center">
@@ -131,7 +131,7 @@ export function PricingSection({ content }: PricingSectionProps) {
         </div>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full mt-10 md:mt-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full mt-10 md:mt-20">
         {Array.from({ length: 8 }, (_, index) => (
           <PricingCard key={index} card={c.cards[0]} />
         ))}

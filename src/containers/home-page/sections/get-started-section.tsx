@@ -14,8 +14,8 @@ function StepItem({ number, title, description }: StepItemProps) {
         {number}
       </span>
       <div className="flex flex-col gap-2">
-        <h3 className="md:text-lg text-sm font-medium">{title}</h3>
-        <p className="text-pretty text-xs md:text-base font-light text-muted-foreground">
+        <h3 className="md:text-base lg:text-lg text-sm font-medium">{title}</h3>
+        <p className="text-pretty text-xs md:text-sm lg:text-base font-light text-muted-foreground">
           {description}
         </p>
       </div>
@@ -47,7 +47,7 @@ export function GetStartedSection() {
 
   return (
     <section
-      className="container mx-auto md:py-40 py-10 px-4 md:px-0"
+      className="container mx-auto md:py-40 py-10 px-4 lg:px-0"
       aria-labelledby="get-started-title"
     >
       <header className="flex flex-col gap-10 text-center">
@@ -65,13 +65,13 @@ export function GetStartedSection() {
         </div>
       </header>
 
-      <div className="mt-6 md:mt-20 flex items-center justify-center gap-6 flex-col md:flex-row">
+      <div className="mt-6 md:mt-20 flex items-center justify-center gap-6 flex-col lg:flex-row">
         <Image
           alt="High-performance GPU setup interface showing deployment options"
-          className="h-auto w-full md:w-auto md:h-[400px]"
+          className="h-auto w-full lg:w-auto lg:h-[400px]"
           src={HOME_GPU}
         />
-        <ol className="flex flex-col md:gap-6 gap-4 list-none p-0">
+        <ol className="flex flex-col lg:gap-6 gap-4 md:flex-row lg:flex-col list-none p-0">
           {steps.map((step) => (
             <StepItem key={step.number} {...step} />
           ))}

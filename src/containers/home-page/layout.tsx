@@ -26,14 +26,13 @@ export function HomePageLayout({ children }: PropsWithChildren) {
       <Image
         src={homePageIcons.iconStar1}
         alt="icon star 1"
-        className="absolute w-auto h-[110px] top-[500px] md:h-[400px] md:top-[1200px] left-1/2 -translate-x-[200%] z-30"
+        className="absolute w-auto h-[110px] top-[500px] lg:h-[400px] md:hidden lg:block md:top-[1200px] left-1/2 -translate-x-[200%] z-30"
         aria-hidden="true"
       />
       <Image
         src={homePageIcons.iconStar2}
-        alt="icon star 1"
-        // className="absolute w-auto h-[400px] top-[2400px] right-1/2 translate-x-[150%]"
-        className="absolute w-auto h-[100px] top-[1400px] md:h-[400px] md:top-[2400px] right-1/2 translate-x-[150%]"
+        alt="icon star 2"
+        className="absolute w-auto h-[100px] top-[1400px] md:h-[220px] lg:h-[400px] md:top-[2200px] lg:top-[2400px] right-1/2 translate-x-[150%] md:translate-x-[130%] lg:translate-x-[150%]"
         aria-hidden="true"
       />
       {children}

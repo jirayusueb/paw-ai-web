@@ -69,7 +69,7 @@ export function KeyBenefitsSection({ content }: KeyBenefitsSectionProps) {
 
   return (
     <section
-      className="container mx-auto py-10 md:py-40 px-4 md:px-0"
+      className="container mx-auto py-10 md:py-40 px-4 lg:px-0"
       aria-labelledby="benefits-title"
     >
       <header className="flex flex-col gap-6 md:gap-10 text-center">

@@ -58,7 +58,7 @@ export function Navbar() {
         }`}
       >
         <nav
-          className="container mx-auto flex w-full items-center justify-between px-4 sm:px-0"
+          className="container mx-auto flex w-full items-center justify-between px-4 lg:px-0"
           role="navigation"
           aria-label="Main navigation"
         >
@@ -113,7 +113,7 @@ export function Navbar() {
 
           {/* Center: Logo (Desktop only) */}
           {!isMobile && (
-            <motion.div 
+            <motion.div
               className="flex items-center absolute left-1/2 transform -translate-x-1/2"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -134,14 +134,14 @@ export function Navbar() {
 
           {/* Right: Auth Items (Desktop) / Menu (Mobile) */}
           {!isMobile ? (
-            <motion.ul 
-              className="flex items-center gap-4" 
+            <motion.ul
+              className="flex items-center gap-4"
               role="menubar"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <motion.li 
+              <motion.li
                 role="none"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -157,7 +157,7 @@ export function Navbar() {
                   <a href="#login">Login</a>
                 </Button>
               </motion.li>
-              <motion.li 
+              <motion.li
                 role="none"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -168,24 +168,24 @@ export function Navbar() {
                 </BeamButton>
               </motion.li>
             </motion.ul>
-                      ) : (
-              <motion.div 
-                className="flex items-center"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
+          ) : (
+            <motion.div
+              className="flex items-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => showMobileNavSheet()}
+                aria-label="Open mobile menu"
+                className="h-10 w-10"
               >
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={() => showMobileNavSheet()}
-                  aria-label="Open mobile menu"
-                  className="h-10 w-10"
-                >
-                  <Menu className="h-6 w-6" aria-hidden="true" />
-                </Button>
-              </motion.div>
-            )}
+                <Menu className="h-6 w-6" aria-hidden="true" />
+              </Button>
+            </motion.div>
+          )}
         </nav>
       </motion.header>
     </>

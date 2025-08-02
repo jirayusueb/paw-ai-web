@@ -178,7 +178,7 @@ export function CTASection({ content, onSubmit, className }: CTASectionProps) {
   return (
     <section
       ref={sectionRef}
-      className={`container mx-auto flex flex-col items-center py-10 md:py-40 px-4 md:px-0 ${
+      className={`container mx-auto flex flex-col items-center py-10 md:py-40 px-4 lg:px-0 ${
         className || ""
       }`}
       aria-labelledby="cta-title"

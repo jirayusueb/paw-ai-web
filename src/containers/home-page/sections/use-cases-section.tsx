@@ -77,7 +77,7 @@ export function UseCasesSection({ content }: UseCasesSectionProps) {
 
   return (
     <section
-      className="container mx-auto py-10 md:py-40 px-4 md:px-0"
+      className="container mx-auto py-10 md:py-40 px-4 lg:px-0"
       aria-labelledby="use-cases-title"
     >
       <header className="flex flex-col md:gap-10 gap-6 text-center">

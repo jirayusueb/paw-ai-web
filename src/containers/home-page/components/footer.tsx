@@ -97,7 +97,7 @@ export function Footer() {
         alt="footer jet"
         className="w-full absolute bottom-0 left-0"
       />
-      <div className="container mx-auto flex flex-col justify-between pt-15 md:pb-10 px-4 md:px-0">
+      <div className="container mx-auto flex flex-col justify-between pt-15 md:pb-10 px-4 lg:px-0">
         <Image src={LOGO} alt="logo" />
         <div className="justify-between md:mt-15 mt-10">
           <div className="w-full grid md:grid-cols-6 grid-cols-2 gap-x-4 gap-y-10">
